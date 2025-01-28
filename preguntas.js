@@ -50,3 +50,5 @@ let preguntas = [
         respuestaCorrecta: 'Mercurio'
     }
 ];
+
+export default preguntas;

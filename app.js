@@ -1,11 +1,11 @@
 import preguntas from './preguntas.js';
-console.log(preguntas);
 
 let preguntaHTML = document.getElementById('pregunta');
 let opcionesHTML = document.getElementById('opciones');
 
 let preguntaGenerada = '';
 let intentos = 0;
+let puntos = 0;
 
 function generarPregunta() {
     let preguntaRandom = Math.floor(Math.random() * preguntas.length);
@@ -19,14 +19,17 @@ function mostrarPregunta(){
 
     let pregunta = preguntaGenerada.pregunta;
     let opciones = preguntaGenerada.opciones;
+    let puntosHTML = document.getElementById('puntos');
 
     preguntaHTML.innerHTML = `${pregunta}`;
 
     opcionesHTML.innerHTML = '';
 
     opciones.forEach(opcion => {
-        opcionesHTML.innerHTML += `<li><button onclick="seleccionarOpcion('${opcion}');">${opcion}</button></li>`
+        opcionesHTML.innerHTML += `<li><button onclick="seleccionarOpcion('${opcion}');">${opcion}</button></li><br>`
     });
+
+    puntosHTML.innerHTML = `puntos: ${puntos}`;
 
     return;
 }
@@ -34,12 +37,26 @@ function mostrarPregunta(){
 mostrarPregunta();
 
 window.seleccionarOpcion = function(opcionSeleccionada){
-    console.log(opcionSeleccionada);
     if(opcionSeleccionada === preguntaGenerada.respuestaCorrecta){
-        console.log(`respuesta correcta`);
+        puntos += 10;
+        intentos++;
         mostrarPregunta();
+        console.log(puntos)
     }else{
-        console.log(`respuesta incorrecta`);
+        intentos++;
         mostrarPregunta();
+        console.log(puntos);
     }
+
+    if(intentos == 5){
+        alert(`Se termino el juego, tu puntaje es de ${puntos} puntos`);
+    }
+
+    return;
+}
+
+function reiniciarTrivia(){
+    puntos = 0;
+    intentos = 0;
+    mostrarPregunta();
 }

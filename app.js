@@ -57,5 +57,5 @@ window.seleccionarOpcion = function(opcionSeleccionada){
 }
 
 function reiniciarTrivia(){
-    window.location.reload();
+    window.location.reload(true);
 }

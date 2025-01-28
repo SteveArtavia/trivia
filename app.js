@@ -56,6 +56,7 @@ window.seleccionarOpcion = function(opcionSeleccionada){
 }
 
 function reiniciarTrivia(){
+    //Agregar un modal de sweetalert o alguna libreria de notificaciones
     puntos = 0;
     intentos = 0;
     mostrarPregunta();

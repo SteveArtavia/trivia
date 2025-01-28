@@ -50,6 +50,7 @@ window.seleccionarOpcion = function(opcionSeleccionada){
 
     if(intentos == 5){
         alert(`Se termino el juego, tu puntaje es de ${puntos} puntos`);
+        reiniciarTrivia();
     }
 
     return;

@@ -57,5 +57,7 @@ window.seleccionarOpcion = function(opcionSeleccionada){
 }
 
 function reiniciarTrivia(){
-    window.location.reload(true);
+    puntos = 0;
+    intentos = 0;
+    mostrarPregunta();
 }

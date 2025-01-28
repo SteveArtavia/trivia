@@ -7,4 +7,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2em;
+    width: auto;
+}
+.pregunta-container{
+    width: 100%;
+}
+#pregunta{
+    text-align: center;
+}
+#opciones{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+button{
+    width: 100%;
+    border-radius: 1em;
+    border: none;
+    background-color: rgb(112, 172, 252);
+    color: white;
+    padding: 1em;
 }

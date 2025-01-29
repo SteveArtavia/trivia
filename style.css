@@ -2,6 +2,9 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    background: linear-gradient(160deg, rgb(51, 20, 79), rgb(23, 7, 54));
+    color: white;
+    padding: 5em 0;
 }
 .container{
     display: flex;
@@ -9,7 +12,23 @@ body{
     justify-content: center;
     align-items: center;
     padding: 2em;
-    width: auto;
+    width: 40%;
+    margin: auto;
+    height: 50%;
+    background-color: rgb(43, 13, 70);
+    border-radius: 2em;
+    border:1px solid rgb(34, 6, 59);
+    box-shadow: 0 0 10px 0 rgb(27, 3, 48);
+}
+#puntos{
+    text-align: center;
+    color: grey;
+    opacity: 0.3;
+}
+span{
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
 }
 .pregunta-container{
     width: 100%;
@@ -19,16 +38,31 @@ body{
 }
 #opciones{
     padding: 0;
+    margin: 0;
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
     text-align: center;
+    width: 100%;
+    gap: 1em;
 }
 button{
-    width: 100%;
     border-radius: 1em;
     border: none;
-    background-color: rgb(112, 172, 252);
+    background-color: rgba(64, 119, 177, 0.17);
     color: white;
-    padding: 3em;
+    padding: 2.5em;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(64, 119, 177, 0.3);
+}
+#jugarDeNuevoBtn{
+    background-color: rgba(64, 119, 177);
+    opacity: none !important;
+    color: white;
+}
+
+@media (max-width: 576px){
+
 }

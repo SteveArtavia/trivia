@@ -2,6 +2,7 @@ import preguntas from './preguntas.js';
 
 let preguntaHTML = document.getElementById('pregunta');
 let opcionesHTML = document.getElementById('opciones');
+let puntosHTML = document.getElementById('puntos');
 
 let preguntaGenerada = '';
 let intentos = 0;
@@ -19,7 +20,6 @@ function mostrarPregunta(){
 
     let pregunta = preguntaGenerada.pregunta;
     let opciones = preguntaGenerada.opciones;
-    let puntosHTML = document.getElementById('puntos');
 
     preguntaHTML.innerHTML = `${pregunta}`;
 
@@ -29,7 +29,7 @@ function mostrarPregunta(){
         opcionesHTML.innerHTML += `<li><button onclick="seleccionarOpcion('${opcion}');">${opcion}</button></li><br>`
     });
 
-    puntosHTML.innerHTML = `puntos: ${puntos}`;
+    puntosHTML.innerHTML = `<small>puntos:</small><br><br> <span>${puntos}</span>`;
 
     return;
 }
@@ -42,14 +42,17 @@ window.seleccionarOpcion = function(opcionSeleccionada){
         intentos++;
         mostrarPregunta();
         console.log(puntos)
+        alertify.success(`Correcto!`);
     }else{
         intentos++;
         mostrarPregunta();
         console.log(puntos);
+        alertify.error(`Incorrecto!`);
     }
 
     if(intentos == 5){
-        reiniciarTrivia();
+        finDelJuego('Eso es todo!', `Has obtenido ${puntos} puntos`);
+          
     }
 
     return;
@@ -60,4 +63,13 @@ function reiniciarTrivia(){
     puntos = 0;
     intentos = 0;
     mostrarPregunta();
+}
+
+function finDelJuego(titulo, texto){
+    preguntaHTML.innerHTML = titulo;
+    opcionesHTML.innerHTML = texto;
+    puntosHTML.innerHTML = `<button id='jugarDeNuevoBtn' onlick="reiniciarJuego();">Jugar de nuevo</button>`;
+
+
+    return;
 }

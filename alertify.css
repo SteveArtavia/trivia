@@ -1,0 +1,19 @@
+/* Alerta de correcto */
+.alertify-notifier .ajs-message.ajs-success {
+    background: linear-gradient(135deg, #2E7D32,rgb(68, 24, 106));
+    color: white;
+    font-size: 1.2em;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Alerta de incorrecto */
+.alertify-notifier .ajs-message.ajs-error {
+    background: linear-gradient(135deg, #B71C1C,rgb(68, 24, 106));
+    color: white;
+    font-size: 1.2em;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}

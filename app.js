@@ -26,7 +26,7 @@ function mostrarPregunta(){
     opcionesHTML.innerHTML = '';
 
     opciones.forEach(opcion => {
-        opcionesHTML.innerHTML += `<li><button onclick="seleccionarOpcion('${opcion}');">${opcion}</button></li><br>`
+        opcionesHTML.innerHTML += `<li><button class='opcionesBtn' onclick="seleccionarOpcion('${opcion}');">${opcion}</button></li><br>`
     });
 
     puntosHTML.innerHTML = `<small>puntos:</small><br><br> <span>${puntos}</span>`;
@@ -58,8 +58,7 @@ window.seleccionarOpcion = function(opcionSeleccionada){
     return;
 }
 
-function reiniciarTrivia(){
-    //Agregar un modal de sweetalert o alguna libreria de notificaciones
+window.reiniciarTrivia = function(){
     puntos = 0;
     intentos = 0;
     mostrarPregunta();
@@ -68,7 +67,7 @@ function reiniciarTrivia(){
 function finDelJuego(titulo, texto){
     preguntaHTML.innerHTML = titulo;
     opcionesHTML.innerHTML = texto;
-    puntosHTML.innerHTML = `<button id='jugarDeNuevoBtn' onlick="reiniciarJuego();">Jugar de nuevo</button>`;
+    puntosHTML.innerHTML = `<button id='jugarDeNuevoBtn' onclick="reiniciarTrivia();">Jugar de nuevo</button>`;
 
 
     return;

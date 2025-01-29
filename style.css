@@ -3,6 +3,10 @@ body{
     padding: 0;
     font-family: sans-serif;
     background: linear-gradient(160deg, rgb(51, 20, 79), rgb(23, 7, 54));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
     color: white;
     padding: 5em 0;
 }
@@ -14,7 +18,7 @@ body{
     padding: 2em;
     width: 40%;
     margin: auto;
-    height: 50%;
+    height: auto;
     background-color: rgb(43, 13, 70);
     border-radius: 2em;
     border:1px solid rgb(34, 6, 59);
@@ -23,7 +27,6 @@ body{
 #puntos{
     text-align: center;
     color: grey;
-    opacity: 0.3;
 }
 span{
     font-size: 3em;
@@ -44,7 +47,7 @@ span{
     width: 100%;
     gap: 1em;
 }
-button{
+.opcionesBtn{
     border-radius: 1em;
     border: none;
     background-color: rgba(64, 119, 177, 0.17);
@@ -61,6 +64,10 @@ button:hover{
     background-color: rgba(64, 119, 177);
     opacity: none !important;
     color: white;
+    border: none;
+    padding: 3em;
+    border-radius: 2em;
+    cursor: pointer;
 }
 
 @media (max-width: 576px){

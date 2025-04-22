@@ -7,6 +7,7 @@ body{
     background-size: cover;
     color: white;
     padding: 5em 0;
+    height: 100vh;
 }
 .container{
     display: flex;
@@ -69,6 +70,22 @@ button:hover{
 }
 
 @media (max-width: 576px){
+    body{
+        overflow: hidden;
+        padding: 0;
+    }
+    .container{
+        width: 80%;
+        margin: auto;
+        height: 100vh;
+        background-color: transparent;
+        border-radius: 0;
+        border:none;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px){
     body{
         overflow: hidden;
         padding: 0;
